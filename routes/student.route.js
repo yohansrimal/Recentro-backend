@@ -44,7 +44,7 @@ const {
 } = require("../controllers/student.topic.controller");
 
 //topic Registation
-let topiccontroller = require("../Controllers/student.topic.panel.controller");
+let topiccontroller = require("../controllers/student.topic.panel.controller");
 
 //Student routes
 router.post("/register", signupController);
@@ -60,7 +60,9 @@ router.get("/studentgroup/getAll", getAllStudentGroups);
 router.post("/topic/create", requestSupervisor);
 
 //topics Registation
-router.post("/topics/add", multerUploadInMemory.single("file"),
+router.post(
+  "/topics/add",
+  multerUploadInMemory.single("file"),
   async (req, res) => {
     console.log(req.body);
     console.log(req.file);
@@ -77,11 +79,11 @@ router.post("/topics/add", multerUploadInMemory.single("file"),
     console.log(uploadResult.Location);
 
     var newTopicObj = {
-      "groupID": req.body.groupID,
-      "topic":req.body.topic ,
-      "supervisorID":req.body.supervisorID ,
-      "co_supervisorID":req.body.co_supervisorID ,
-      "docURL": uploadResult.Location
+      groupID: req.body.groupID,
+      topic: req.body.topic,
+      supervisorID: req.body.supervisorID,
+      co_supervisorID: req.body.co_supervisorID,
+      docURL: uploadResult.Location,
     };
 
     const newTopic = new topicModel(newTopicObj);
@@ -98,7 +100,10 @@ router.post("/topics/add", multerUploadInMemory.single("file"),
 );
 
 router.get("/topics/view", topiccontroller.getAllTopics);
-router.get("/topics/viewByGroup/:groupID",topiccontroller.getCategoryTopicsGroup);
+router.get(
+  "/topics/viewByGroup/:groupID",
+  topiccontroller.getCategoryTopicsGroup
+);
 router.get("/topics/viewByPanel/:panelID", topiccontroller.getCategoryTopics);
 router.get("/topics/view/:id", topiccontroller.getTopic);
 router.put("/topics/update/:id", topiccontroller.updateTopic);
