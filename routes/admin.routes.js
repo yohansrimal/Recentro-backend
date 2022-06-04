@@ -16,10 +16,10 @@ const multerUploadInMemory = multer({
   storage: multerMemoryStorage,
 });
 
-let doccontroller = require("../Controllers/document.controller");
-let noticontroller = require("../Controllers/notice.controller");
-let regcontroller = require("../Controllers/regUser.controller");
-let prescontroller = require("../Controllers/presentation.controller");
+let doccontroller = require("../controllers/document.controller");
+let noticontroller = require("../controllers/notice.controller");
+let regcontroller = require("../controllers/regUser.controller");
+let prescontroller = require("../controllers/presentation.controller");
 
 let noticeModel = require("../models/notice.model");
 let documentModel = require("../models/document.model");
