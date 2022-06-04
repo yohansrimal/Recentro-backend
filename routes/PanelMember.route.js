@@ -8,7 +8,7 @@ let finalMarkcontroller = require("../controllers/finalMarks.controller");
 router.post("/panelMembers/save", panelMembercontroller.createPanelMember); //Save PanelMember Details
 router.get("/panelMembers/view/", panelMembercontroller.getAllPanelMembers); //Get All PanelMember Details
 router.get("/panelMembers/view/:id", panelMembercontroller.getPanelMember); //Get a specific PanelMember Details
-router.put("/panelMembers/update/:id", panelMembercontroller.updatePanelMember); //Update PanelMember Details
+router.put("/panelMembers/update/:id", panelMembercontroller.updatePanelMember); //Update PanelMember Detail
 router.delete(
   "/panelMembers/delete/:id",
   panelMembercontroller.deletePanelMember
