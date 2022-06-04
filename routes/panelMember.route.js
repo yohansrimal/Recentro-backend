@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-let panelMembercontroller = require("../controllers/panelMember.controller");
+let panelMembercontroller = require("../controllers/PanelMember.controller");
 let panelcontroller = require("../controllers/panel.controller");
 let finalMarkcontroller = require("../controllers/finalMarks.controller");
 
